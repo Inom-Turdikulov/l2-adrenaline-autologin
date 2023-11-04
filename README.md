@@ -11,7 +11,7 @@ AutologinUI used as controller script. You load it in one adrenaline profile, an
 Quickstart
 ==========
 
-![Output sample](https://github.com/Inom-Turdikulov/l2-adrenaline-autologin/raw/main/demo.mp4)
+DEMO: https://disk.yandex.com/i/GB5MQ3tqTPQm8A
 
 Settings
 --------
@@ -37,5 +37,4 @@ After you loaded and validated all accounts, you can dynamicale enable/disable t
 
 Links
 =======
-- Demos: 
-- Repositroy with source code:
+- Demos: https://disk.yandex.com/i/GB5MQ3tqTPQm8A
