@@ -229,7 +229,6 @@ begin
 
             // CheckBoxes accounts which need to be load
             ToLoadAccount := ThreadUsers[i].nickname;
-            // Engine.Msg('loading', ToLoadAccount);
 
             ToLoadAccountOnline := false;
             if (BotList.ByName(ToLoadAccount, Account)) and
@@ -248,11 +247,12 @@ begin
                 Engine.Delay(GameRunDealy);
 
                 // Load account
-                for i := 0 to BotList.Count - 1 do
+                for j := 0 to BotList.Count - 1 do
                 begin
-                    account := TBot(BotList(i));
+                    account := TBot(BotList(j));
                     if (Account.Control.status <> lsonline) then
                     begin
+                        Engine.Msg('loading', ThreadUsers[i].Nickname);
                         Login(ThreadUsers[i].login, ThreadUsers[i].password, Account.Control);
                         break;
                     end;
