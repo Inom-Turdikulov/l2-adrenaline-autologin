@@ -11,6 +11,8 @@ AutologinUI used as controller script. You load it in one adrenaline profile, an
 Quickstart
 ==========
 
+![Output sample](https://github.com/Inom-Turdikulov/l2-adrenaline-autologin/raw/main/demo.mp4)
+
 Settings
 --------
 1. Open Settings.ini file and change accounts data.
