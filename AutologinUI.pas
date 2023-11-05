@@ -207,10 +207,10 @@ begin
             account := TBot(BotList(j));
 
             if (Account.Control.Status <> lsonline) and
-                (Account.Control.GameWindow > 0) then
-                begin
-                    Account.Control.GameClose;
-                end;
+               (Account.Control.GameWindow > 0) then
+            begin
+                Account.Control.GameClose;
+            end;
         end;
 
         for i := low(ThreadUsers) to high(ThreadUsers) do
@@ -239,15 +239,7 @@ begin
 
             // Log-in
             if not ToLoadAccountOnline then
-            begin
-                // Rename accounts (fix specific loading issue by adrenaline,
-                // if postions are in wrong order
-                for j := 0 to BotList.Count - 1 do begin
-                   account := TBot(BotList(j));
-                   if (Account.Control.status <> lsonline) then
-                     account.Newname := 'Name_1'; // don't use this as nickname for your characters!
-                end;
-                
+            begin             
                 // Open new game client
                 Engine.Msg('AugoLoginUI', 'Opening client at ' + ClientPath);
                 ShellExecuteW(0, PChar('open'), PChar(ClientPath), nil,
@@ -258,6 +250,7 @@ begin
                 for j := 0 to BotList.Count - 1 do
                 begin
                     account := TBot(BotList(j));
+          
                     if (Account.Control.status <> lsonline) then
                     begin
                         Engine.Msg('loading', ThreadUsers[i].Nickname);
@@ -265,7 +258,21 @@ begin
                         break;
                     end;
                 end;
+                
+                // Load partially loaded account
+                for j := 0 to BotList.Count - 1 do
+                begin
+                    account := TBot(BotList(j));
 
+                    if (Account.Control.status <> lsonline) and
+                       (Account.Control.LoginStatus = 2) and
+                       (Account.Control.GameWindow > 0) then
+                    begin
+                        Engine.Msg('AugoLoginUI', 'Detected partially loaded accounts, starting...');
+                        Account.Control.GameStart();
+                        Account.Control.Delay(GameRunDealy);
+                    end;
+                end;
             end;
         end;
         Engine.delay(1000);

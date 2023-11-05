@@ -56,6 +56,12 @@ begin
     for i := 0 to WaitIterations do
     begin
         if (AccountControl.Status <> lsOnline) then UseKey(Enter, AccountControl) else break;
+        if (Account.Control.GameWindow = 0) then 
+        begin
+           AccountControl.Msg('Autologin', 'Window not found! stop waiting online...');
+           AccountControl.Delay(3000);
+           exit;
+        end;
     end;
     if  AccountControl.Status = lsOnline then 
         AccountControl.Msg('Autologin', 'Succesefully loaded character');
