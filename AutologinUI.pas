@@ -240,6 +240,14 @@ begin
             // Log-in
             if not ToLoadAccountOnline then
             begin
+                // Rename accounts (fix specific loading issue by adrenaline,
+                // if postions are in wrong order
+                for j := 0 to BotList.Count - 1 do begin
+                   account := TBot(BotList(j));
+                   if (Account.Control.status <> lsonline) then
+                     account.Newname := 'Имя_1';
+                end;
+                
                 // Open new game client
                 Engine.Msg('AugoLoginUI', 'Opening client at ' + ClientPath);
                 ShellExecuteW(0, PChar('open'), PChar(ClientPath), nil,
