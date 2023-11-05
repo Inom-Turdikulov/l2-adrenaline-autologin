@@ -245,7 +245,7 @@ begin
                 for j := 0 to BotList.Count - 1 do begin
                    account := TBot(BotList(j));
                    if (Account.Control.status <> lsonline) then
-                     account.Newname := 'Имя_1';
+                     account.Newname := 'Name_1'; // don't use this as nickname for your characters!
                 end;
                 
                 // Open new game client
