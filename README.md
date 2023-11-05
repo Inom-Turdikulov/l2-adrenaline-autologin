@@ -31,7 +31,7 @@ client_path="C:\bin\L2Kot\system\l2.exe"
 Load script
 -----------
 In Adrenaline UI add a profile (Add account button) and load script (AutologinUI.pas) only in the first profile.
-Then run it. If you filled all settings correctly, enable the first account and wait when it fill be loaded. If something goes wrong (script trying to load it again). Stop script and check Settings.ini file.
+Then run it. If you filled all settings correctly, enable the first account and wait when it will be loaded. If something goes wrong (script trying to load it again). Stop script and check Settings.ini file.
 
 After you loaded and validated all accounts, you can dynamically enable/disable them.
 
