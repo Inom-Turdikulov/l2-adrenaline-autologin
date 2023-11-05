@@ -259,7 +259,7 @@ begin
                     end;
                 end;
                 
-                // Load partially loaded account
+                // Load partialy loaded account
                 for j := 0 to BotList.Count - 1 do
                 begin
                     account := TBot(BotList(j));
@@ -268,7 +268,7 @@ begin
                        (Account.Control.LoginStatus = 2) and
                        (Account.Control.GameWindow > 0) then
                     begin
-                        Engine.Msg('AugoLoginUI', 'Detected partially loaded accounts, starting...');
+                        Engine.Msg('AugoLoginUI', 'Detected partialy loaded accounts, starting...');
                         Account.Control.GameStart();
                         Account.Control.Delay(GameRunDealy);
                     end;
